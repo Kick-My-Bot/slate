@@ -128,7 +128,7 @@ Highly Recommended
 }
 ```
 
-This option sets the main color of the chat window (headers, bot message, bot bubble). The color must be in hexadecimal. 
+This option sets the main color of the chat window (headers, bot message, bot bubble). The color must be in <i>hexadecimal</i>. 
 <aside class="notice">
 <b><u>Default:</u></b> `#1abc9c`
 </aside>
@@ -146,7 +146,7 @@ This option sets the main color of the chat window (headers, bot message, bot bu
 }
 ```
 
-This option sets the secondary color of the chat window (quick replies (CTA), buttons). The color must be in hexadecimal. 
+This option sets the secondary color of the chat window (quick replies (CTA), buttons). The color must be in <i>hexadecimal</i>. 
 <aside class="notice">
 <b><u>Default:</u></b> `same as primaryColor`
 </aside>
