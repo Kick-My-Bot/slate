@@ -245,6 +245,31 @@ This option sets the speech bubble color. This option is only considered if welc
 </aside>
 <br/>
 
+## analytics
+<u>Type:</u> `Object`
+
+```javascript
+{
+  ...
+  analytics: {
+      quickreplies: function(title) {
+         console.log(title);
+    },
+      items: function(title) {
+         console.log(title);
+    }
+    },
+  ...
+}
+```
+
+This option can contain two keys : `quickreplies` and `items`. These two keys are user-defined functions that run when the user clicks on a quickreply or an item in a carousel (cards). The functions take the title of the selected element as a parameter. The analytics can be used to perform analytics actions.
+<aside class="notice">
+<b><u>Default:</u></b> `null`
+</aside>
+<br/>
+<br/>
+<br/>
 
 # UI
 
@@ -254,7 +279,7 @@ This option sets the speech bubble color. This option is only considered if welc
 ```javascript
 {
   ...
-  title: "#dedede",
+  title: "Hello, I'm BOT the bot",
   ...
 }
 ```
@@ -272,7 +297,7 @@ This option sets the text that will be displayed in the chat window header.
 ```javascript
 {
   ...
-  version: "#dedede",
+  version: "V4_a",
   ...
 }
 ```
