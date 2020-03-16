@@ -326,6 +326,22 @@ This option sets the main chatbot's image path. You can specify a remote or loca
 </aside>
 <br/>
 
+## displayWelcomePage
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+  ...
+  displayWelcomePage: true,
+  ...
+}
+```
+
+This option, if set to `true`, displays a welcome page when a user opens the chatbot.
+<aside class="notice">
+<b><u>Default:</u></b> `true`
+</aside>
+<br/>
 
 ## welcomeMessage
 <u>Type:</u> `String`
@@ -381,6 +397,10 @@ Allowed values for the `type` key : <br/>
 - `reddit`
 - `whatsapp`
 - `steam`
+<br/>
+<br/>
+6 links is the maximum for an optimal responsive behavior.
+
 
 <aside class="notice">
 <b><u>Default:</u></b> `none`
@@ -389,22 +409,33 @@ Allowed values for the `type` key : <br/>
 <br/>
 
 
-## welcomePageText
-<u>Type:</u> `String`
+## welcomeConfig
+<u>Type:</u> `Object`
 
 ```javascript
 {
   ...
-  welcomePageText: "Hello, <br/> I'm displayed on the <b>Welcome page</b>. <br/>Click on &quot;Start&quot; to start !",
+  welcomeConfig: {
+    welcomeTitle: "Hello, <br/> I'm displayed on the <b>Welcome page</b> and the <b>FullScreen intro message</b>.",
+    welcomeSubtitle: "Click on &quot;Start&quot; to start !"
+  }, 
   ...
 }
 ```
 
-This option sets the introducing message you want to display on the welcome page. HTML is supported.
+This option is an object that sets the introducing message you want to display on the welcome page. On the windowed version, the `welcomeTitle` and the `welcomeSubtitle` will be displayed. On the full screen version, only the `welcomeTitle` will be displayed as an introductive message to the conversation. HTML is supported.
 <aside class="notice">
-<b><u>Default:</u></b> `none`
+<b><u>Default:</u></b> `{
+    welcomeTitle: "Hello",
+    welcomeSubtitle: ""
+  }`
 </aside>
+
+These pictures show respectively the result of the configuration example on the windowed welcome page and on the full screen introductive message.
+
 <img style="display: block; margin:auto" src="../images/example-welcome-page-text.png"></img>
+<br/>
+<img style="display: block; margin:auto" src="../images/docs-fullscreen-welcome.png"></img>
 
 <br/>
 
@@ -460,23 +491,6 @@ This option sets the URL of a Facebook Messenger chatbot. This option will displ
 </aside>
 <br/>
 
-## displayWelcomePage
-<u>Type:</u> `Boolean`
-
-```javascript
-{
-  ...
-  displayWelcomePage: true,
-  ...
-}
-```
-
-This option, if set to `true`, displays a welcome page when a user opens the chatbot.
-<aside class="notice">
-<b><u>Default:</u></b> `true`
-</aside>
-<br/>
-
 ## tabsConfig
 <u>Type:</u> `Object`
 
@@ -503,6 +517,62 @@ This option sets the configuration for each tab with two keys `CHAT` and `FAQ` a
 These pictures show the result of the example configuration for the `CHAT` and `FAQ` tab header respectively :
 
 <img style="display: block; margin:auto" src="../images/example-tabs-config-chat.png"></img>
+<br/>
+
+## fullScreen
+<u>Type:</u> `Object`
+
+```javascript
+{
+  ...
+  fullScreen: {
+    enableFullScreen: true,
+    forceFullScreen: false,
+    background: {
+      main: {
+        outside:"#000",
+        middle:"#113862",
+        inside:"#4498ff"
+      },
+      waves: {
+        left: "#53b4fb",
+        right: "#3c6477"
+      }
+    }
+  },
+  ...
+}
+```
+
+This option sets the configuration for the full screen mode. <br/>`enableFullScreen` is a boolean that, if set to true, will enable full screen mode and all of its options for your chatbot. Full screen can only be enabled with a valid `registrationKey` (provided by KickMyBot) <br/>
+`forceFullScreen` is a boolean that if set to true, will disable windowed mode for the chatbot, and it will only be available in full screen mode. <br/>
+`background` is an object that sets the color parameters or the full screen background. Two objects are defined inside to set the colors :
+<br/>
+- `main` is an object with 3 keys `inside`, `middle` and `outside` that will set the colors of the background, which is a 3-color radial gradient. `inside` sets the inner-circle color. `middle` sets the middle circle color, which is the most dominant color. `outside` sets the outside-circle color, on the borders.
+<br/>
+- `waves` is an object with 2 keys `left` and `right` that will set the colors of the bottom waves, are a 2-color linear gradient from left to right. `left` / `right` sets the color of the left/right gradient.
+<aside class="notice">
+<b><u>Default:</u></b> `{
+			enableFullScreen: false,
+			forceFullScreen: false,
+			background: {
+				main: {
+					outside: "#2c5b93",
+					middle: "#113862",
+					inside: "#0f4c81"
+				},
+				waves: {
+					left: "#53b4fb",
+					right: "#3c6477"
+				}
+			}
+		}`
+</aside>
+
+These pictures show the result of the example configuration for the `background` :
+
+<img style="display: block; margin:auto" src="../images/docs-fullscreen.png"></img>
+
 <br/>
 
 ## lang
