@@ -671,8 +671,8 @@ This option, if set to `true`, will make the launcher icon animated (small bounc
         inside:"#4498ff"
       },
       waves: {
-        left: "#53b4fb",
-        right: "#3c6477"
+        top: "#53b4fb",
+        bottom: "#3c6477"
       }
     }
   },
@@ -741,8 +741,8 @@ This option, if set to true, will disable windowed mode for the chatbot, and it 
         inside:"#4498ff"
       },
       waves: {
-        left: "#53b4fb",
-        right: "#3c6477"
+        top: "#53b4fb",
+        bottom: "#3c6477"
       }
     }
     ...
@@ -757,7 +757,7 @@ This option, if set to true, will disable windowed mode for the chatbot, and it 
 - `main` is an object with 3 keys `inside`, `middle` and `outside` that will set the colors of the background, which is a 3-color radial gradient. `inside` sets the inner-circle color. `middle` sets the middle circle color, which is the most dominant color. `outside` sets the outside-circle color, on the borders.
 <br/>
 <br/>
-- `waves` is an object with 2 keys `left` and `right` that will set the colors of the bottom waves, are a 2-color linear gradient from left to right. `left` / `right` sets the color of the left/right gradient.
+- `waves` is an object with 2 keys `top` and `bottom` that will set the colors of the bottom waves, are a 2-color linear gradient from top to bottom. `top` / `bottom` sets the color of the top/bottom gradient.
 <aside class="notice">
 <b><u>Default:</u></b> `{
 				main: {
@@ -766,8 +766,8 @@ This option, if set to true, will disable windowed mode for the chatbot, and it 
 					inside: "#0f4c81"
 				},
 				waves: {
-					left: "#53b4fb",
-					right: "#3c6477"
+					top: "#53b4fb",
+					bottom: "#3c6477"
 				}
 			}`
 </aside>
