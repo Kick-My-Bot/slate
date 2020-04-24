@@ -36,8 +36,6 @@ Note: This plug-in can only be used alongside with Kick My Bot products.
 
 # Base Setup
 
-## loadScript
-
 ```javascript
 function loadScript(src, callback) {
   var s,
@@ -76,8 +74,28 @@ This is the recommended way to implement the script onto your webpage.
 Note that two options need to be defined in order for the bot to work properly. Those two options are explained below.
 </aside>
 
+
+# CASE 1: Linked configuration
+
+```javascript
+
+  var config = {
+    projectKey: your_project_key
+  };
+
+```
+In most cases, your window's configuration will be handled by the Kick My Bot team. <br/>
+They will provide you with a `projectKey` that can be used to display your chat window with a setting built for your website. You can set it inside the `config` object.
+<br/> It is however possbile for you to set up a custom configuration. Refer to <b>CASE 2</b> for more details.
 <br/>
 <br/>
+
+# CASE 2 : Custom configuration
+
+If you want to have a custom configuration, you can change it directly inside the config object. <br/>
+The options available for customization are explained in the different sections below.
+
+# Required
 
 ## serverUrl
 <u>Type:</u> `String`
@@ -655,6 +673,38 @@ This option, if set to `true`, will make the launcher icon animated (small bounc
 <b><u>Default:</u></b> `true`
 </aside>
 <br/>
+
+## welcomeWithCv
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+  ...
+  welcomeWithCv: true,
+  ...
+}
+```
+
+This option, if set to `true`, will make it available to send a CV through the welcome page. It can be used by dragging and dropping your file inside the dropzone.
+<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
+
+## forceWelcomeWithCv
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+  ...
+  forceWelcomeWithCv: true,
+  ...
+}
+```
+
+This option, if set to `true`, will only put the dropzone inside the welcome page, and remove the "Start" button. The only way to start the conversation would be to drag and drop a CV inside the dropzone of the welcome page.
+<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
 
 # Full Screen
 
