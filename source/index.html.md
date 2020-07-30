@@ -90,7 +90,7 @@ They will provide you with a `projectKey` that can be used to display your chat 
 <br/>
 <br/>
 
-# CASE 2 : Custom configuration
+# CASE 2: Custom configuration
 
 If you want to have a custom configuration, you can change it directly inside the config object. <br/>
 The options available for customization are explained in the different sections below.
@@ -170,6 +170,39 @@ This option sets the secondary color of the chat window (quick replies (CTA), bu
 </aside>
 <br/>
 
+## windowBackgroundColor
+<u>Type:</u> `String`
+
+```javascript
+{
+  ...
+  windowBackgroundColor: "#f1f1f1",
+  ...
+}
+```
+
+This option sets the background color of the message list and the welcome page of the chat window in windowed mode only. The color must be in hexadecimal. 
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+<br/>
+
+## windowBackgroundImage
+<u>Type:</u> `String`
+
+```javascript
+{
+  ...
+  windowBackgroundImage: "https://the-url-to-your-image.image/image.png",
+  ...
+}
+```
+
+This option sets the background image of the message list and the welcome page of the chat window in windowed mode only. 
+<aside class="notice">
+<b><u>Default:</u></b> `default star image`
+</aside>
+<br/>
 
 ## isWhite
 <u>Type:</u> `Boolean`
@@ -286,6 +319,24 @@ This option can contain two keys : `quickreplies` and `items`. These two keys ar
 <b><u>Default:</u></b> `null`
 </aside>
 <br/>
+
+## lightMode (BETA)
+<u>Type:</u> `boolean`
+
+```javascript
+{
+  ...
+  lightMode: true,
+  ...
+}
+```
+
+This option, if sets to `true`, activates the light mode in fullscreen mode, which sets text font to black, and adds a black background to each message.<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
+
+<img style="display: block; margin:auto" src="../images/example-lightMode.png"></img>
+<br/>
 <br/>
 <br/>
 
@@ -340,8 +391,28 @@ This option sets the chatbot UI version.
 
 This option sets the main chatbot's image path. You can specify a remote or local image.
 <aside class="notice">
-<b><u>Default:</u></b> `(displays the Kick My Bot mascot).`
+<b><u>Default:</u></b> `(displays the Kick My Bot mascot)`
 </aside>
+<br/>
+
+## bubbleIcon
+<u>Type:</u> `String`
+
+```javascript
+{
+  ...
+  bubbleIcon: "https://my-bubble-icon-url.kickbot.com/icon.png",
+  ...
+}
+```
+
+This option sets the image to appears in the chat bubble when the window is closed. You can specify a remote or local image.
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+<img style="display: block; margin:auto" src="../images/example-bubbleIcon.png"></img>
 <br/>
 
 ## displayWelcomePage
@@ -389,7 +460,8 @@ This option sets the text that will be displayed after some time in the speech b
     ...
     {
       type: "facebook",
-      url: "https://www.facebook.com/MyFacebookGroup"
+      url: "https://www.facebook.com/MyFacebookGroup",
+      displayInHeader: true
     },
     {
       icon: "https://my-custom-website-icon.com/icon.png",
@@ -401,8 +473,9 @@ This option sets the text that will be displayed after some time in the speech b
 }
 ```
 
-This option sets the list of links you want to display on the welcome page. Links are objects with a `type` key and a `url` key (for the link to your desired website).
+This option sets the list of links you want to display on the welcome page and at the top left in fullscreen mode. Links are objects with a `type` key and a `url` key (for the link to your desired website).
 If you want to use a custom icon, you can replace the `type` key with an `icon` and give your custom icon URL as a value.
+<br/>You can optionally add a `displayInHeader` key with a boolean value. If set to `true`, the icon will also appear in the header in windowed mode.
 
 Allowed values for the `type` key : <br/>
 `facebook`
