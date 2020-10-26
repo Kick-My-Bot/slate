@@ -15,7 +15,7 @@ search: true
 KMBotUI is a custom chat-window for websites. This chat-window is intended to be used with a automated conversation agents (chatbots). It supports a large variety of rich message formats.
 
 <aside class="notice">
-Note: This plug-in can only be used alongside with Kick My Bot products.
+Note: This plug-in can only be used alongside with KMB Labs products.
 </aside>
 
 <i>Here is an example of what can be done on the chat-window with this plugin :</i>
@@ -84,7 +84,7 @@ Note that two options need to be defined in order for the bot to work properly. 
   };
 
 ```
-In most cases, your window's configuration will be handled by the Kick My Bot team. <br/>
+In most cases, your window's configuration will be handled by the KMB Labs team. <br/>
 They will provide you with a `projectKey` that can be used to display your chat window with a setting built for your website. You can set it inside the `config` object.
 <br/> It is however possbile for you to set up a custom configuration. Refer to <b>CASE 2</b> for more details.
 <br/>
@@ -103,7 +103,7 @@ The options available for customization are explained in the different sections 
 ```javascript
 {
   ...
-  serverUrl: "https://my-bot-url.kickmybot.com/",
+  serverUrl: "https://my-bot-url.kmblabs.com/",
   ...
 }
 ```
@@ -128,7 +128,7 @@ Required
 }
 ```
 
-This option corresponds to the name of the project on the back office, which the questions in the FAQ section will be synchronized with. Usually provided by Kick My Bot.
+This option corresponds to the name of the project on the back office, which the questions in the FAQ section will be synchronized with. Usually provided by KMB Labs.
 <aside class="warning">
 Highly Recommended
 </aside>
@@ -228,7 +228,7 @@ This option, if set to `true`, will make the close button on the top right of th
 ```javascript
 {
   ...
-  headerBackground: "https://my-background-url.kickmybot.com/header.png",
+  headerBackground: "https://my-background-url.kmblabs.com/header.png",
   ...
 }
 ```
@@ -355,7 +355,7 @@ This option, if sets to `true`, activates the light mode in fullscreen mode, whi
 
 This option sets the text that will be displayed in the chat window header. 
 <aside class="notice">
-<b><u>Default:</u></b> `Kick My Bot`
+<b><u>Default:</u></b> `KMB Labs`
 </aside>
 <br/>
 
@@ -384,14 +384,14 @@ This option sets the chatbot UI version.
 ```javascript
 {
   ...
-  botIcon: "https://my-bot-icon-url.kickmybot.com/icon.png",
+  botIcon: "https://my-bot-icon-url.kmblabs.com/icon.png",
   ...
 }
 ```
 
 This option sets the main chatbot's image path. You can specify a remote or local image.
 <aside class="notice">
-<b><u>Default:</u></b> `(displays the Kick My Bot mascot)`
+<b><u>Default:</u></b> `(displays the KMB Labs mascot)`
 </aside>
 <br/>
 
@@ -401,7 +401,7 @@ This option sets the main chatbot's image path. You can specify a remote or loca
 ```javascript
 {
   ...
-  bubbleIcon: "https://my-bubble-icon-url.kickbot.com/icon.png",
+  bubbleIcon: "https://my-bubble-icon-url.kmblabs.com/icon.png",
   ...
 }
 ```
@@ -695,7 +695,7 @@ This option, if set to `true`, allows the chatbot to be displayed on mobile devi
 }
 ```
 
-This option, if an authorized key is set, will hide the "Powered By Kick My Bot" block under the input area. You can ask for a valid key by contacting the following address : <a href="mailto:contact@kickmybot.com">contact@kickmybot.com</a>
+This option, if an authorized key is set, will hide the "Powered By KMB Labs" block under the input area. You can ask for a valid key by contacting the following address : <a href="mailto:contact@kickmybot.com">contact@kickmybot.com</a>
 <aside class="notice">
 <b><u>Default:</u></b> `none`
 </aside>
@@ -722,7 +722,7 @@ This option, if an authorized key is set, will hide the "Powered By Kick My Bot"
 }
 ```
 
-This option sets the content for the persitent menu, which following the Facebook Messenger API format (see here: https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/persistent-menu). Usually provided by Kick My Bot.
+This option sets the content for the persitent menu, which following the Facebook Messenger API format (see here: https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api/persistent-menu). Usually provided by KMB Labs.
 <aside class="notice">
 <b><u>Default:</u></b> `true`
 </aside>
@@ -802,7 +802,7 @@ This option, if set to `true`, will only put the dropzone inside the welcome pag
   ...
 }
 ```
-In ordrer to set the configuration for the full screen mode, a `fullScreen` key must be added
+In order to set the configuration for the full screen mode, a `fullScreen` key must be added
 
 <u>Type:</u> `Object`
 
@@ -825,7 +825,7 @@ Here is the result of the example full screen configuration :
 }
 ```
 
-This option, if set to true, will enable full screen mode and all of its options for your chatbot. Full screen can only be enabled with a valid `registrationKey` (provided by KickMyBot)
+This option, if set to true, will enable full screen mode and all of its options for your chatbot. Full screen can only be enabled with a valid `registrationKey` (provided by KMB Labs)
 <aside class="notice">
 <b><u>Default:</u></b> `true`
 </aside>
@@ -847,6 +847,63 @@ This option, if set to true, will enable full screen mode and all of its options
 This option, if set to true, will disable windowed mode for the chatbot, and it will only be available in full screen mode.
 <aside class="notice">
 <b><u>Default:</u></b> `false`
+</aside>
+
+## webpageMode
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+    ...
+  fullScreen: {
+    ...
+    webpageMode: true,
+    ...
+  }
+}
+```
+
+This option, if set to true, will set the chatbot in webpage mode, meaning that full screen mode will be active all the time, and the conversation will immediately starts.
+<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
+
+## staticWaves
+<u>Type:</u> `Boolean`
+
+```javascript
+{
+    ...
+  fullScreen: {
+    ...
+    staticWaves: true,
+    ...
+  }
+}
+```
+
+This option, if set to true, will disable the animation of the waves in full screen mode.
+<aside class="notice">
+<b><u>Default:</u></b> `false`
+</aside>
+
+## buttonBackgroundColor
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  fullScreen: {
+    ...
+		buttonBackgroundColor: "#24a6f3",
+    ...
+  }
+}
+```
+
+This option sets the background color of the buttons in full screen mode.
+<aside class="notice">
+<b><u>Default:</u></b> `#1abc9c`
 </aside>
 
 ## background
@@ -901,8 +958,203 @@ These pictures show the result of the example configuration for the `background`
 
 <br/>
 
+# Page Customization
+
+```javascript
+{
+  ...
+  pageCustomization: [
+    ...
+    {
+      matchPath:"commercial",
+      idGetter: "commercial/offer/(.*?)/infos",
+      bubbleText:"<b>Welcome on kmblabs.com !
+      What are you looking for ?</b>",
+      bubbleButtonColor:"#0f4c81",
+      bubbleDelay: 1000,
+      bubbleTimer: 20000,
+      fastQR: [
+        {
+          type: "postback_bubble",
+          title:"I want to apply",
+          payload:"HOW_TO_APPLY_POSTBACK"
+        },
+        {
+          type: "postback_bubble",
+          title:"I want more information",
+          payload:"FAQ_${id}_POSTBACK"
+        }
+      ]
+    },
+    ...
+  ],
+  ...
+}
+```
+In order to customize the window depending on the page it is on, a `pageCustomization` key can be added.
+
+<u>Type:</u> `Array of Objects`
+
+Here is the result of the example pageCustomization configuration on a fictive page www.kmblabs.com/commercial/offer/541/infos : 
+
+<img style="display: block; margin:auto" src="../images/example-pageCustomization.png"></img>
+<br/>
+
+## matchPath
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    matchPath: "commercial",
+    ...
+  }
+}
+```
+
+This option corresponds to the page in which the customization is applied. The value can be a substring or a regex that matches the URL of the page.
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+## idGetter
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    idGetter: "commercial/offer/(.*?)/infos",
+    ...
+  }
+}
+```
+
+This option is a regex to retrieve an ID inside the URL in order to set a custom postback for the chatbot's answer.
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+## bubbleText
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    bubbleText: "<b>Welcome on kmblabs.com !
+    What are you looking for ?</b>",
+    ...
+  }
+}
+```
+
+This option sets the text displayed inside the speech bubble.
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+## bubbleButtonColor
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    bubbleButtonColor: "#0f4c81",
+    ...
+  }
+}
+```
+
+This option sets the color of the speech bubble buttons (for fast QRs).
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+## bubbleDelay
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    bubbleDelay: 1000,
+    ...
+  }
+}
+```
+
+This option sets the time after which the speech bubble will appear.
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+
+## bubbleTimer
+<u>Type:</u> `String`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    bubbleTimer: 20000,
+    ...
+  }
+}
+```
+
+This option sets the time after which the speech bubble will disappear.
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
 
 
+## fastQR
+<u>Type:</u> `Array`
+
+```javascript
+{
+    ...
+  pageCustomization: {
+    ...
+    fastQR: [
+      ...
+      {
+        type: "postback_bubble",
+        title:"I want to apply",
+        payload:"HOW_TO_APPLY_POSTBACK"
+      },
+      ...
+    ]
+    ...
+  }
+  ...
+}
+```
+
+`fastQR` is an array that allows to customize the buttons under the speech bubble. It has 3 keys :
+<br/>
+<br/>
+- `type` is a string that sets the type of the button. Typically, it is set as `postback_bubble` and it will send a message in the conversation, by displaying the `title` as the message (with a `payload` if set).
+<br/>
+<br/>
+- `title` is a string that sets the text on the button. It also is the message displayed in the conversation when clicked.
+<br/>
+<br/>
+- `payload` is a string that sets the payload sent to the server with the message.
+
+<aside class="notice">
+<b><u>Default:</u></b> `none`
+</aside>
+<br/>
+<br/>
 
 <!-- 
 		"welcomePageText",
