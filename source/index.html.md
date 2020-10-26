@@ -968,8 +968,9 @@ These pictures show the result of the example configuration for the `background`
     {
       matchPath:"commercial",
       idGetter: "commercial/offer/(.*?)/infos",
-      bubbleText:"<b>Welcome on kmblabs.com !
-      What are you looking for ?</b>",
+      bubbleText:"<b>Welcome !</b><br/> I see you are
+      interested by our commercial offer. What
+      do you want to do ?",
       bubbleButtonColor:"#0f4c81",
       bubbleDelay: 1000,
       bubbleTimer: 20000,
