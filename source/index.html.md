@@ -242,7 +242,7 @@ This option is the URL of the background image you want to put on the header of 
 <br/>
 
 
-## height
+## width
 <u>Type:</u> `Integer`
 
 ```javascript
@@ -261,7 +261,7 @@ This option sets the width of the main window in pixels.
 
 
 
-## width
+## height
 <u>Type:</u> `Integer`
 
 ```javascript
